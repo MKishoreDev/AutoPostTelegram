@@ -16,7 +16,6 @@ setuptools.setup(
     url='https://telegram.me/Aasf_CyberKing',
     packages=setuptools.find_packages(),
     classifiers=[
-        'Development Status :: 4 - alpha',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: Implementation :: CPython',
