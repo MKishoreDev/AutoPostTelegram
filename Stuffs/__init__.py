@@ -10,9 +10,9 @@ def response(r):
 
 class auto():
     def __init__(self):
-        self.animememe_url = "https://meme-api.herokuapp.com/gimme/{text}"
+        self.animememe_url = "https://meme-api.herokuapp.com/gimme/{}"
         self.subreddits = ["Animememes", "Wholesomeanimemes", "Narutomemes", "JojoMemes", "Onepiecememes", "Memepiece", "AnimeFunny", "AnimeMirchi" "AnimeMeme", "AttackOnTitanmemes", "DankAnimeMemes", "Anime_Memes", "AnimeAnimemes", "GreatestAnimeMemes", "Goodanimemes", "animemes"]
-        self.animegif_url = "https://nekos.best/api/v2/{text}"
+        self.animegif_url = "https://nekos.best/api/v2/{}"
         self.subpoints = ["baka", "bite", "blush", "bored", "cry", "cuddle", "dance", "facepalm", "feed", "handhold", "happy", "highfive", "hug", "laugh", "pat", "poke", "pout", "punch", "shoot", "shrug", "slap", "sleep", "smile", "smug", "stare", "think", "thumbsup", "tickle", "wave", "wink", "yeet"]
 
     def animememe(self, token, chat):
