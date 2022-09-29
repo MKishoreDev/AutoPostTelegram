@@ -15,12 +15,6 @@ setuptools.setup(
     author_email='aasfvl@gmail.com',
     url='https://telegram.me/Aasf_CyberKing',
     packages=setuptools.find_packages(),
-    classifiers=[
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: Implementation :: CPython',
-        'Typing :: Typed'
-    ],
     install_requires= ['requests'],
     python_requires='>=3.6'
 )
