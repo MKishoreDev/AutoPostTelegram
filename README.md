@@ -1,8 +1,8 @@
 # AutoPostTeegram
 
-A Telegram Auto Post Package
+**A Telegram Auto Post Package**
 
-- A Package Used To Post Memes, Gifs, Facts To Your Channel On Telegram
+• `A Package Used To Post Memes, Gifs, Facts To Your Channel On Telegram`
 
 
 ```bash
