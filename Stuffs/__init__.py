@@ -9,7 +9,8 @@ def response(r):
         print('[' + time.ctime(time.time()) + ']', 'OK:', r['ok'], '; Error:',r['error_code'],'\n',r['description'],)
 
 class auto():
-    def __init__(self):
+    def init(self, token):
+        self.token = token
         self.animememe_url = "https://meme-api.herokuapp.com/gimme/{}"
         self.subreddits = ["Animememes", "Wholesomeanimemes", "Narutomemes", "JojoMemes", "Onepiecememes", "Memepiece", "AnimeFunny", "AnimeMirchi" "AnimeMeme", "AttackOnTitanmemes", "DankAnimeMemes", "Anime_Memes", "AnimeAnimemes", "GreatestAnimeMemes", "Goodanimemes", "animemes"]
         self.animegif_url = "https://nekos.best/api/v2/{}"
@@ -17,32 +18,32 @@ class auto():
         self.fact_url = "https://some-random-api.ml/animal/{}"
         self.subani = ["dog", "cat", "panda", "fox", "red_panda", "koala", "bird", "raccoon", "kangaroo"]
 
-    def animememe(self, token, chat):
+    def animememe(self, chat):
         try:
             animememe_url = requests.get(self.animememe_url.format(random.choice(self.subreddits))).json()['url']
             anime_name = requests.get(self.animememe_url.format(random.choice(self.subreddits))).json()['title']
             anime_post = requests.get(self.animememe_url.format(random.choice(self.subreddits))).json()['postLink']
             r = requests.get(
-                "https://api.telegram.org/bot" + token + "/sendPhoto?chat_id=" + chat + "&photo=" + anime_url + f"&caption=[{anime_name}]({anime_post})" + "&parse_mode=MarkdownV2").json()
+                "https://api.telegram.org/bot" + self.token + "/sendPhoto?chat_id=" + chat + "&photo=" + anime_url + f"&caption=[{anime_name}]({anime_post})" + "&parse_mode=MarkdownV2").json()
             response(r)
         except Exception as e:
             return "Something Error Occured Report To telegram.me/Aasf_CyberKing\n\n{}".format(e)
 
-    def animegif(self, token, chat):
+    def animegif(self, chat):
         try:
             animegif_url = requests.get(self.animegif_url.format(random.choice(self.subpoints)).json()["results"][0]["url"])
             r = requests.get(
-                "https://api.telegram.org/bot" + token + "/sendVideo?chat_id=" + chat + "&video=" + animegif_url).json()
+                "https://api.telegram.org/bot" + self.token + "/sendVideo?chat_id=" + chat + "&video=" + animegif_url).json()
             response(r)
         except Exception as e:
             return "Something Error Occured Report To telegram.me/Aasf_CyberKing\n\n{}".format(e)
 
-    def randomfact(self, token, chat):
+    def randomfact(self, chat):
         try:
            fact_url = requests.get(self.fact_url.format(random.choice(self.subani)).json()["image"])
            fact_fact = requests.get(self.fact_url.format(random.choice(self.subani)).json()["fact"])
            r = requests.get(
-               "https://api.telegram.org/bot" + token + "/sendPhoto?chat_id=" + chat + "&photo=" + fact_url + f"&caption={fact_fact}").json()
+               "https://api.telegram.org/bot" + self.token + "/sendPhoto?chat_id=" + chat + "&photo=" + fact_url + f"&caption={fact_fact}").json()
            response(r)
         except Exception as e:
             return "Something Error Occured Report To telegram.me/Aasf_CyberKing\n\n{}".format(e)
