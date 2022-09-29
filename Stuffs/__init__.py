@@ -14,6 +14,8 @@ class auto():
         self.subreddits = ["Animememes", "Wholesomeanimemes", "Narutomemes", "JojoMemes", "Onepiecememes", "Memepiece", "AnimeFunny", "AnimeMirchi" "AnimeMeme", "AttackOnTitanmemes", "DankAnimeMemes", "Anime_Memes", "AnimeAnimemes", "GreatestAnimeMemes", "Goodanimemes", "animemes"]
         self.animegif_url = "https://nekos.best/api/v2/{}"
         self.subpoints = ["baka", "bite", "blush", "bored", "cry", "cuddle", "dance", "facepalm", "feed", "handhold", "happy", "highfive", "hug", "laugh", "pat", "poke", "pout", "punch", "shoot", "shrug", "slap", "sleep", "smile", "smug", "stare", "think", "thumbsup", "tickle", "wave", "wink", "yeet"]
+        self.fact_url = "https://some-random-api.ml/animal/{}"
+        self.subani = ["dog", "cat", "panda", "fox", "red_panda", "koala", "bird", "raccoon", "kangaroo"]
 
     def animememe(self, token, chat):
         try:
@@ -32,5 +34,15 @@ class auto():
             r = requests.get(
                 "https://api.telegram.org/bot" + token + "/sendVideo?chat_id=" + chat + "&video=" + animegif_url).json()
             response(r)
+        except Exception as e:
+            return "Something Error Occured Report To telegram.me/Aasf_CyberKing\n\n{}".format(e)
+
+    def randomfact(self, token, chat):
+        try:
+           fact_url = requests.get(self.fact_url.format(random.choice(self.subani)).json()["image"])
+           fact_fact = requests.get(self.fact_url.format(random.choice(self.subani)).json()["fact"])
+           r = requests.get(
+               "https://api.telegram.org/bot" + token + "/sendPhoto?chat_id=" + chat + "&photo=" + fact_url + f"&caption={fact_fact}").json()
+           response(r)
         except Exception as e:
             return "Something Error Occured Report To telegram.me/Aasf_CyberKing\n\n{}".format(e)
