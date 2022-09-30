@@ -11,12 +11,16 @@ $ python3 -m pip install autopostg
 
 ## Example
 ```To Post Anime Memes
+import asyncio
 from Stuffs import auto
 
-x = auto()
+x = auto(TOKEN)
 
 while True:
-    x.animememe(token=TOKEN, chat="@AnimeMeme")
+    x.animememe(chat="@AnimeMeme")
+    asyncio.sleep(5) #The Time Gap Of Your Post In Seconds
+    x.animememe(chat="@AnimeMeme")
+
 ```
 
 
