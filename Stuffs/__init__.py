@@ -2,6 +2,7 @@ import datetime as dt
 import random
 import datetime
 import requests 
+from setup import version
 
 dt_India = dt.datetime.utcnow() + dt.timedelta(hours=5, minutes=30)
 indian_time = dt_India.strftime('%d-%b-%y %H:%M:%S')
@@ -21,7 +22,7 @@ class auto():
         self.subpoints = ["baka", "bite", "blush", "bored", "cry", "cuddle", "dance", "facepalm", "feed", "handhold", "happy", "highfive", "hug", "laugh", "pat", "poke", "pout", "punch", "shoot", "shrug", "slap", "sleep", "smile", "smug", "stare", "think", "thumbsup", "tickle", "wave", "wink", "yeet"]
         self.fact_url = "https://some-random-api.ml/animal/{}"
         self.subani = ["dog", "cat", "panda", "fox", "red_panda", "koala", "bird", "raccoon", "kangaroo"]
-        print(f"Welcome To AutoPostTelegram (version 0.2.0)")
+        print(f"Welcome To AutoPostTelegram (version {version})")
 
     def animememe(self, chat):
         try:
