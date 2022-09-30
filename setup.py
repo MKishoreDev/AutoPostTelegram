@@ -13,7 +13,7 @@ setuptools.setup(
     license='License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)',
     author='Aasfcyberking',
     author_email='aasfvl@gmail.com',
-    url='https://telegram.me/Aasf_CyberKing',
+    url='https://github.com/AasfCyberKing/AutoPostTelegram/',
     packages=setuptools.find_packages(),
     install_requires= ['requests', 'datetime'],
     python_requires='>=3.6'
