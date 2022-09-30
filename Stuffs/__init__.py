@@ -14,6 +14,11 @@ def response(r):
         print('[' + indian_time + ']', 'OK:', r['ok'], '; Error:',r['error_code'],'\n',r['description'],)
 
 class auto():
+  """
+  Parameters:
+      - token : bot token of your bot you can generate it from @botfather
+  """
+
     def __init__(self, token):
         self.token = token
         self.animememe_url = "https://meme-api.herokuapp.com/gimme/{}"
