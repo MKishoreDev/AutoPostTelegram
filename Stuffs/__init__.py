@@ -20,9 +20,10 @@ class auto():
 
     def animememe(self, chat):
         try:
-            animememe_url = requests.get(self.animememe_url.format(random.choice(self.subreddits))).json()['url']
-            anime_name = requests.get(self.animememe_url.format(random.choice(self.subreddits))).json()['title']
-            anime_post = requests.get(self.animememe_url.format(random.choice(self.subreddits))).json()['postLink']
+            meme = random.choice(self.subreddits)
+            animememe_url = requests.get(self.animememe_url.format(meme)).json()['url']
+            anime_name = requests.get(self.animememe_url.format(meme)).json()['title']
+            anime_post = requests.get(self.animememe_url.format(meme)).json()['postLink']
             r = requests.get(
                 "https://api.telegram.org/bot" + self.token + "/sendPhoto?chat_id=" + chat + "&photo=" + animememe_url + f"&caption=[{anime_name}]({anime_post})" + "&parse_mode=MarkdownV2").json()
             response(r)
