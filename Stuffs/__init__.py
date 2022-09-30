@@ -1,12 +1,16 @@
-import time
+import datetime as dt
 import random
+import datetime
 import requests 
+
+dt_India = dt.datetime.utcnow() + dt.timedelta(hours=5, minutes=30)
+indian_time = dt_India.strftime('%d-%b-%y %H:%M:%S')
 
 def response(r):
     if r['ok'] is True:
-        print('[' + time.ctime(time.time()) + ']', 'OK:', r['ok'], ';#' + str(r['result']['message_id']))
+        print('[' + indian_time + ']', 'OK:', r['ok'], ';#' + str(r['result']['message_id']))
     else:
-        print('[' + time.ctime(time.time()) + ']', 'OK:', r['ok'], '; Error:',r['error_code'],'\n',r['description'],)
+        print('[' + indian_time + ']', 'OK:', r['ok'], '; Error:',r['error_code'],'\n',r['description'],)
 
 class auto():
     def __init__(self, token):
