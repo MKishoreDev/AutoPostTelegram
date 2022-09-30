@@ -6,7 +6,7 @@ with open("README.md", "r") as txt:
 
 setuptools.setup(
     name='AutoPostTelegram',
-    version='0.0.9',
+    version='0.1.0',
     description='An Telegram Auto Post Package',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -15,6 +15,6 @@ setuptools.setup(
     author_email='aasfvl@gmail.com',
     url='https://telegram.me/Aasf_CyberKing',
     packages=setuptools.find_packages(),
-    install_requires= ['requests'],
+    install_requires= ['requests', 'datetime'],
     python_requires='>=3.6'
 )
