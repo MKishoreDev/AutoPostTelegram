@@ -50,7 +50,7 @@ class auto():
         except Exception as e:
             return "Something Error Occured Report To telegram.me/Aasf_CyberKing\n\n{}".format(e)
 
-    def randomfact(self, chat):
+    def animalfact(self, chat):
         try:
            animal = random.choice(self.subani)
            fact_url = requests.get(self.fact_url.format(animal)).json()["image"]
@@ -58,5 +58,15 @@ class auto():
            r = requests.get(
                "https://api.telegram.org/bot" + self.token + "/sendPhoto?chat_id=" + chat + "&photo=" + fact_url + f"&caption={fact_fact}").json()
            response(r)
+        except Exception as e:
+            return "Something Error Occured Report To telegram.me/Aasf_CyberKing\n\n{}".format(e)
+
+    def endpoints():
+        try:
+            return """
+• animeme
+• animegifs
+• randomfact
+"""
         except Exception as e:
             return "Something Error Occured Report To telegram.me/Aasf_CyberKing\n\n{}".format(e)
