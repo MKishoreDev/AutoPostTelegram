@@ -41,8 +41,9 @@ class auto():
 
     def randomfact(self, chat):
         try:
-           fact_url = requests.get(self.fact_url.format(random.choice(self.subani))).json()["image"]
-           fact_fact = requests.get(self.fact_url.format(random.choice(self.subani))).json()["fact"]
+           animal = random.choice(self.subani)
+           fact_url = requests.get(self.fact_url.format(animal)).json()["image"]
+           fact_fact = requests.get(self.fact_url.format(animal)).json()["fact"]
            r = requests.get(
                "https://api.telegram.org/bot" + self.token + "/sendPhoto?chat_id=" + chat + "&photo=" + fact_url + f"&caption={fact_fact}").json()
            response(r)
