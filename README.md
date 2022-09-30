@@ -1,4 +1,4 @@
-# AutoPostTeegram
+# AutoPostTelegram
 
 **A Telegram Auto Post Package**
 
@@ -6,7 +6,7 @@
 
 
 ```bash
-$ python3 -m pip install autopostg
+$ python3 -m pip install -U AutoPostTelegram
 ```
 
 ## Example
