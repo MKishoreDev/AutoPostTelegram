@@ -32,7 +32,7 @@ class auto():
 
     def animegif(self, chat):
         try:
-            animegif_url = requests.get(self.animegif_url.format(random.choice(self.subpoints)).json()["results"][0]["url"])
+            animegif_url = requests.get(self.animegif_url.format(random.choice(self.subpoints))).json()["results"][0]["url"]
             r = requests.get(
                 "https://api.telegram.org/bot" + self.token + "/sendVideo?chat_id=" + chat + "&video=" + animegif_url).json()
             response(r)
@@ -41,8 +41,8 @@ class auto():
 
     def randomfact(self, chat):
         try:
-           fact_url = requests.get(self.fact_url.format(random.choice(self.subani)).json()["image"])
-           fact_fact = requests.get(self.fact_url.format(random.choice(self.subani)).json()["fact"])
+           fact_url = requests.get(self.fact_url.format(random.choice(self.subani))).json()["image"]
+           fact_fact = requests.get(self.fact_url.format(random.choice(self.subani))).json()["fact"])
            r = requests.get(
                "https://api.telegram.org/bot" + self.token + "/sendPhoto?chat_id=" + chat + "&photo=" + fact_url + f"&caption={fact_fact}").json()
            response(r)
