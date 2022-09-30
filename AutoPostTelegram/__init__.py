@@ -2,8 +2,8 @@ import datetime as dt
 import random
 import datetime
 import requests 
-from setup import version
 
+version = "1.0.2"
 dt_India = dt.datetime.utcnow() + dt.timedelta(hours=5, minutes=30)
 indian_time = dt_India.strftime('%d-%b-%y %H:%M:%S')
 
