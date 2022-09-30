@@ -21,6 +21,7 @@ class auto():
         self.subpoints = ["baka", "bite", "blush", "bored", "cry", "cuddle", "dance", "facepalm", "feed", "handhold", "happy", "highfive", "hug", "laugh", "pat", "poke", "pout", "punch", "shoot", "shrug", "slap", "sleep", "smile", "smug", "stare", "think", "thumbsup", "tickle", "wave", "wink", "yeet"]
         self.fact_url = "https://some-random-api.ml/animal/{}"
         self.subani = ["dog", "cat", "panda", "fox", "red_panda", "koala", "bird", "raccoon", "kangaroo"]
+        print(f"Welcome To AutoPostTelegram (version 0.2.0)")
 
     def animememe(self, chat):
         try:
