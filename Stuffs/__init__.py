@@ -9,7 +9,7 @@ def response(r):
         print('[' + time.ctime(time.time()) + ']', 'OK:', r['ok'], '; Error:',r['error_code'],'\n',r['description'],)
 
 class auto():
-    def init(self, token):
+    def __init__(self, token):
         self.token = token
         self.animememe_url = "https://meme-api.herokuapp.com/gimme/{}"
         self.subreddits = ["Animememes", "Wholesomeanimemes", "Narutomemes", "JojoMemes", "Onepiecememes", "Memepiece", "AnimeFunny", "AnimeMirchi" "AnimeMeme", "AttackOnTitanmemes", "DankAnimeMemes", "Anime_Memes", "AnimeAnimemes", "GreatestAnimeMemes", "Goodanimemes", "animemes"]
