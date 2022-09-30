@@ -6,7 +6,7 @@ with open("README.md", "r") as txt:
 
 setuptools.setup(
     name='AutoPostTelegram',
-    version='1.0.0',
+    version='1.0.1',
     description='An Telegram Auto Post Package',
     long_description=long_description,
     long_description_content_type="text/markdown",
