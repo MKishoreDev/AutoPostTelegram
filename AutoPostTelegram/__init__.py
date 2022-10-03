@@ -26,7 +26,8 @@ class auto():
       self.subpoints = ["baka", "bite", "blush", "bored", "cry", "cuddle", "dance", "facepalm", "feed", "handhold", "happy", "highfive", "hug", "laugh", "pat", "poke", "pout", "punch", "shoot", "shrug", "slap", "sleep", "smile", "smug", "stare", "think", "thumbsup", "tickle", "wave", "wink", "yeet"]
       self.fact_url = "https://some-random-api.ml/animal/{}"
       self.subani = ["dog", "cat", "panda", "fox", "red_panda", "koala", "bird", "raccoon", "kangaroo"]
-
+      self.animechan_url = "https://animechan.vercel.app/api/random"
+  
   def animememe(self, chat):
       try:
           meme = random.choice(self.subreddits)
@@ -48,6 +49,22 @@ class auto():
       except Exception as e:
           return "Something Error Occured Report To telegram.me/Aasf_CyberKing\n\n{}".format(e)
 
+  def animequote(self, chat):
+      try:
+          q = requests.get(self.animechan_url).json()
+          q_ani = q['anime']
+          q_q = q['quote']
+          q_chr = q['character']
+          caption = f"""
+<b>➢ Anime:</b> `{q_ani}`
+<b>➢ Character:</b> `{q_chr}`
+<b>➢ Quote:</b> `{q_q}`"""
+          r = requests.get(
+              "https://api.telegram.org/bot" + self.token + "/sendMessage?chat_id=" + chat + f"&text={caption}" + "&parse_mode=MarkdownV2").json()
+          response(r)
+      except Exception as e:
+          return "Something Error Occured Report To telegram.me/Aasf_CyberKing\n\n{}".format(e)
+
   def animalfact(self, chat):
       try:
          animal = random.choice(self.subani)
@@ -62,9 +79,10 @@ class auto():
   def endpoints():
       try:
           return """
-• animeme
-• animegifs
-• randomfact
+• animeme - Post Random Anime Meme [Photo]
+• animegifs - Post Random Anime Gifs [Gif]
+• animequote - Post Random Anime Quotes [Text]
+• animalfact - Post Random Animals Fact [Photo]
 """
       except Exception as e:
           return "Something Error Occured Report To telegram.me/Aasf_CyberKing\n\n{}".format(e)
