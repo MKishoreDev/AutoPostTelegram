@@ -27,7 +27,7 @@ class auto():
       self.fact_url = "https://some-random-api.ml/animal/{}"
       self.subani = ["dog", "cat", "panda", "fox", "red_panda", "koala", "bird", "raccoon", "kangaroo"]
       self.animechan_url = "https://animechan.vercel.app/api/random"
-  
+      self.pkmnmeme_url = "https://meme-api.herokuapp.com/gimme/pokemonmemes"
   def animememe(self, chat):
       try:
           meme = random.choice(self.subreddits)
@@ -76,6 +76,16 @@ class auto():
       except Exception as e:
           return "Something Error Occured Report To telegram.me/Aasf_CyberKing\n\n{}".format(e)
 
+  def pkmnmeme(self, chat):
+      try:
+          pkmn = requests.get(self.pkmnmeme_url).json()['url']
+          pkmn_name = requests.get(self.pkmnmeme_url).json()['title']
+          r = requests.get(
+              "https://api.telegram.org/bot" + self.token + "/sendPhoto?chat_id=" + chat + "&photo=" + pkmn + f"&caption='`{pkmn_name}`'" + "&parse_mode=MarkdownV2").json()
+          response(r)
+      except Exception as e:
+          return "Something Error Occured Report To telegram.me/Aasf_CyberKing\n\n{}".format(e)
+
   def endpoints():
       try:
           return """
@@ -83,6 +93,7 @@ class auto():
 • animegifs - Post Random Anime Gifs [Gif]
 • animequote - Post Random Anime Quotes [Text]
 • animalfact - Post Random Animals Fact [Photo]
+• pkmnmeme - Post Random Pokemon Memes [Photo]
 """
       except Exception as e:
           return "Something Error Occured Report To telegram.me/Aasf_CyberKing\n\n{}".format(e)
