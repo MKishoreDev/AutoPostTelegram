@@ -38,12 +38,6 @@ from AutoPostTelegram import auto
 
 print(auto.endpoints())
 ```
-# Output
-```
-• animeme
-• animegifs
-• animalfact
-```
 
 # Known Issues
 ```
